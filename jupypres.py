@@ -75,6 +75,27 @@ angle=0, scale=1.0, mutation_scale=10, color='red', lw=4.0, arrowstyle='-|>'):
                           )
     ax.add_patch(arr)
 
+def image(ax, fname):
+
+    ax.imshow(mpl.image.imread(fname))
+
+
+def center_text(ax, x, y, text, fontsize=24, color='black'):
+
+    ax.text(x, y, text, 
+            fontsize=fontsize, 
+            horizontalalignment="center", 
+            verticalalignment="center", 
+            color='red')
+
+def left_text(ax, x, y, text, fontsize=24, color='black'):
+    
+    ax.text(x, y, text, 
+            fontsize=fontsize, 
+            horizontalalignment="left", 
+            verticalalignment="center", 
+            color='red')
+
 
 Video = Video
 
