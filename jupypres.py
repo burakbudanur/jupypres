@@ -86,7 +86,7 @@ def center_text(ax, x, y, text, fontsize=24, color='black'):
             fontsize=fontsize, 
             horizontalalignment="center", 
             verticalalignment="center", 
-            color='red')
+            color=color)
 
 def left_text(ax, x, y, text, fontsize=24, color='black'):
     
@@ -94,7 +94,7 @@ def left_text(ax, x, y, text, fontsize=24, color='black'):
             fontsize=fontsize, 
             horizontalalignment="left", 
             verticalalignment="center", 
-            color='red')
+            color=color)
 
 
 Video = Video
