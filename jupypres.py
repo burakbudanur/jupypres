@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 from matplotlib.figure import Figure
-from matplotlib.patches import FancyArrowPatch 
+from matplotlib.patches import FancyArrowPatch, Circle
 import matplotlib as mpl
 import numpy as np 
 from IPython.display import Video
@@ -61,8 +61,16 @@ def cross(ax, x, y, length=1.0, lw=1.0, color='red', yscale=1.0):
             color=color, lw=lw)
 
 
+def circle(ax, x, y, scale = 1.0, color='red', **kwargs):
+
+    c = Circle((x,y), scale, edgecolor=color, facecolor='none', **kwargs)
+    ax.add_patch(c)
+
+
 def arrow(ax, x, y, 
-angle=0, scale=1.0, mutation_scale=10, color='red', lw=4.0, arrowstyle='-|>'):
+angle=0, scale=1.0, mutation_scale=10, color='red', lw=4.0, arrowstyle='-|>'): 
+
+    angle = (angle / 180) * np.pi 
 
     arr = FancyArrowPatch((x, y), 
                           (x + scale * np.cos(angle), 
@@ -74,6 +82,8 @@ angle=0, scale=1.0, mutation_scale=10, color='red', lw=4.0, arrowstyle='-|>'):
                           lw=lw
                           )
     ax.add_patch(arr)
+
+
 
 def image(ax, fname):
 
